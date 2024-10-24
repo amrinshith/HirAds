@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HirAds App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Onboarding Screens -->
+  <div id="onboarding">
+    <div class="onboard-screen" id="screen1">
+      <h2>Welcome to HirAds!</h2>
+      <p>Easily upload your ads and manage payments.</p>
+      <button class="next-btn" onclick="showNextScreen(2)">Next</button>
+    </div>
+    <div class="onboard-screen" id="screen2" style="display: none;">
+      <h2>Upload Your Ads</h2>
+      <p>Photos and Videos made easy. Reach your audience.</p>
+      <button class="next-btn" onclick="showNextScreen(3)">Next</button>
+    </div>
+    <div class="onboard-screen" id="screen3" style="display: none;">
+      <h2>Secure Payments</h2>
+      <p>Fast and reliable transactions for peace of mind.</p>
+      <button class="next-btn" onclick="hideOnboarding()">Get Started</button>
+    </div>
+  </div>
+
+  <!-- Login Form -->
+  <div id="login" style="display: none;">
+    <h2>Login to HirAds</h2>
+    <form id="loginForm">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Main App: Ad Upload & Payment -->
+  <div id="mainApp" style="display: none;">
+    <h2>Welcome to HirAds Dashboard</h2>
+    
+    <!-- Upload Ad Section -->
+    <div id="uploadSection">
+      <h3>Upload Your Ad</h3>
+      <form id="adUploadForm">
+        <label for="adTitle">Ad Title</label>
+        <input type="text" id="adTitle" name="adTitle" placeholder="Enter ad title" required>
+        
+        <label for="adFile">Upload File</label>
+        <input type="file" id="adFile" name="adFile" accept="image/*, video/*" required>
+        
+        <button type="submit">Upload Ad</button>
+      </form>
+    </div>
+
+    <!-- Payment Section -->
+    <div id="paymentSection" style="margin-top: 40px;">
+      <h3>Complete Payment</h3>
+      <button onclick="processPayment()">Make Payment</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
